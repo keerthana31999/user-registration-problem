@@ -1,4 +1,3 @@
-  
 import java.util.Scanner;
 import java.util.regex.*;
 
@@ -9,7 +8,6 @@ public class UserRegistration {
 	static String email;
 	static String pNum;
 	static String password;
-
 
    static String firstName(){
       Scanner str1 = new Scanner(System.in);
@@ -24,7 +22,6 @@ public class UserRegistration {
       lName = str2.nextLine();
       return lName;
    }
-
 
 	static String emailId(){
 		Scanner str3 = new Scanner(System.in);
@@ -41,6 +38,7 @@ public class UserRegistration {
       return pNum;
    }
 
+
 	static String passwordCheck(){
       Scanner str5 = new Scanner(System.in);
       System.out.println("Enter your password of atleast 8 characters and atleast one upper case letter): ");
@@ -53,19 +51,18 @@ public class UserRegistration {
 	}
 
    public static void main(String args[]) {
-          System.out.println("Welcome to User Registration Problem!");
+      System.out.println("Welcome to User Registration Problem!");
 
 
       Boolean firstName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",UserRegistration.firstName());
 
+
       Boolean lastName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",UserRegistration.lastName());
 
-
-     Boolean emailId = Pattern.matches("^[a][b][c][.][a-z]{3}@[b][l][.][c][o][.][a-z]{2}" ,UserRegistration.emailId());
+		Boolean emailId = Pattern.matches("^[a][b][c][.][a-z]{3}@[b][l][.][c][o][.][a-z]{2}" ,UserRegistration.emailId());
 
 
       Boolean phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,UserRegistration.phoneNum());
-
 
       Boolean passwordCheck = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,}" ,UserRegistration.passwordCheck());
 
@@ -84,7 +81,7 @@ public class UserRegistration {
          System.out.println("Error! Invalid input from user please enter your email Id in valid format(ex-'abc.xyz@bl.co.in) 'abc.' is compulsory xyz can be any three letters '@bl.co' is compulsory and 'in' can be any letters .");
          emailId = Pattern.matches("^[a][b][c][.][a-z]{3}@[b][l][.][c][o][.][a-z]{2}",UserRegistration.emailId());
       }
-		
+
 		while(phoneNum == false) {
 			System.out.println("Error! Invalid input from user please enter your phone number in valid format(ex-'91 9999999999').");
 			phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,UserRegistration.phoneNum());
@@ -104,7 +101,6 @@ public class UserRegistration {
 		System.out.println("Password: " + password);
 		System.out.println("-----------------------------");
 
-
 	allEmailChecks("abc@yahoo.com");
 	allEmailChecks("abc-100@yahoo.com");
 	allEmailChecks("abc.100@yahoo.com");
@@ -114,7 +110,6 @@ public class UserRegistration {
 	allEmailChecks("abc@1.com");
 	allEmailChecks("abc@gmail.com.com");
 	allEmailChecks("abc+100@gmail.com");
-
 
 	allEmailChecks("abc");
 	allEmailChecks("abc@.com.my");
@@ -127,7 +122,7 @@ public class UserRegistration {
 	allEmailChecks("abc..2002@gmail.com");
 	allEmailChecks("abc.@gmail.com");
 	allEmailChecks("abc@abc@gmail.com");
-	allEmailChecks("abc@gmail.com.1a");	
+	allEmailChecks("abc@gmail.com.1a");
 	allEmailChecks("abc@gmail.com.aa.au");
 	}
 }

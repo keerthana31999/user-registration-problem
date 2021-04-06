@@ -53,12 +53,12 @@ public class UserRegistration {
       Boolean phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,UserRegistration.phoneNum());
 
       while(firstName == false) {
-         System.out.println("Error! Invalid input from user please enter your First-Name in valid format(ex-'S'anketh).");
+         System.out.println("Error! Invalid input from user please enter your First-Name in valid format(ex-'k'eerthana).");
          firstName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",UserRegistration.firstName());
       }
 
 		while(lastName == false) {
-         System.out.println("Error! Invalid input from user please enter your Last-Name in valid format(ex-'C'higurupalli).");
+         System.out.println("Error! Invalid input from user please enter your Last-Name in valid format(ex-'J'ujjavarapu).");
          lastName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",UserRegistration.lastName());
       }
 

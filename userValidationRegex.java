@@ -1,3 +1,4 @@
+  
 import java.util.Scanner;
 import java.util.regex.*;
 
@@ -40,23 +41,27 @@ public class UserRegistration {
       return pNum;
    }
 
-
 	static String passwordCheck(){
       Scanner str5 = new Scanner(System.in);
       System.out.println("Enter your password of atleast 8 characters and atleast one upper case letter): ");
       password = str5.nextLine();
       return password;
-   } 
+   }
+	static void allEmailChecks(String a){
+		Boolean emailCheck = Pattern.matches("^(?!\\.)[A-Za-z0-9]+([._%+-]?[0-9])*@[A-Za-z0-9-]+\\.[a-zA-Z]{2,6}(\\.[A-Za-z]{2,6})?$",a);
+		System.out.println(emailCheck);
+	}
 
    public static void main(String args[]) {
-     System.out.println("Welcome to User Registration Problem!");
+          System.out.println("Welcome to User Registration Problem!");
 
 
       Boolean firstName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",UserRegistration.firstName());
 
       Boolean lastName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",UserRegistration.lastName());
 
-		Boolean emailId = Pattern.matches("^[a][b][c][.][a-z]{3}@[b][l][.][c][o][.][a-z]{2}" ,UserRegistration.emailId());
+
+     Boolean emailId = Pattern.matches("^[a][b][c][.][a-z]{3}@[b][l][.][c][o][.][a-z]{2}" ,UserRegistration.emailId());
 
 
       Boolean phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,UserRegistration.phoneNum());
@@ -79,7 +84,7 @@ public class UserRegistration {
          System.out.println("Error! Invalid input from user please enter your email Id in valid format(ex-'abc.xyz@bl.co.in) 'abc.' is compulsory xyz can be any three letters '@bl.co' is compulsory and 'in' can be any letters .");
          emailId = Pattern.matches("^[a][b][c][.][a-z]{3}@[b][l][.][c][o][.][a-z]{2}",UserRegistration.emailId());
       }
-
+		
 		while(phoneNum == false) {
 			System.out.println("Error! Invalid input from user please enter your phone number in valid format(ex-'91 9999999999').");
 			phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,UserRegistration.phoneNum());
@@ -98,5 +103,31 @@ public class UserRegistration {
 		System.out.println("Phone number: +" + pNum);
 		System.out.println("Password: " + password);
 		System.out.println("-----------------------------");
+
+
+	allEmailChecks("abc@yahoo.com");
+	allEmailChecks("abc-100@yahoo.com");
+	allEmailChecks("abc.100@yahoo.com");
+	allEmailChecks("abc111@abc.com");
+	allEmailChecks("abc-100@abc.net");
+	allEmailChecks("abc.100@abc.com.au");
+	allEmailChecks("abc@1.com");
+	allEmailChecks("abc@gmail.com.com");
+	allEmailChecks("abc+100@gmail.com");
+
+
+	allEmailChecks("abc");
+	allEmailChecks("abc@.com.my");
+	allEmailChecks("abc123@gmail.a");
+	allEmailChecks("abc123@.com");
+	allEmailChecks("abc123@.com.com");
+	allEmailChecks(".abc@abc.com");
+	allEmailChecks("abc()*@gmail.com");
+	allEmailChecks("abc@%*.com");
+	allEmailChecks("abc..2002@gmail.com");
+	allEmailChecks("abc.@gmail.com");
+	allEmailChecks("abc@abc@gmail.com");
+	allEmailChecks("abc@gmail.com.1a");	
+	allEmailChecks("abc@gmail.com.aa.au");
 	}
 }

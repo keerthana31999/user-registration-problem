@@ -21,7 +21,7 @@ public class UserRegistration {
 
 
 		while(firstName == false) {
-			System.out.println("Error! Invalid input from user please enter your First-Name in valid format(ex-'S'anketh).");
+			System.out.println("Error! Invalid input from user please enter your First-Name in valid format(ex-'K'eerthana).");
 			firstName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",UserRegistration.firstName());
 		}
 

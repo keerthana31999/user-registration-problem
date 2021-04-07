@@ -9,12 +9,13 @@ public class UserRegistration {
 	static String pNum;
 	static String password;
 
-   static String firstName(){
+    static String firstName(){
       Scanner str1 = new Scanner(System.in);
       System.out.println("Enter your first name in ('K'eerthana) format");
       fName = str1.nextLine();
       return fName;
    }
+
 
 	static String lastName(){
       Scanner str2 = new Scanner(System.in);
@@ -22,6 +23,7 @@ public class UserRegistration {
       lName = str2.nextLine();
       return lName;
    }
+
 
 	static String emailId(){
 		Scanner str3 = new Scanner(System.in);
@@ -51,6 +53,7 @@ public class UserRegistration {
 	}
 
    public static void main(String args[]) {
+
       System.out.println("Welcome to User Registration Problem!");
 
 
@@ -66,9 +69,8 @@ public class UserRegistration {
 
       Boolean passwordCheck = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,}" ,UserRegistration.passwordCheck());
 
-
-      while(firstName == false) {
-         System.out.println("Error! Invalid input from user please enter your First-Name in valid format(ex-'K'eerthana).");
+     while(firstName == false) {
+         System.out.println("Error! Invalid input from user please enter your First-Name in valid format(ex-'S'anketh).");
          firstName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",UserRegistration.firstName());
       }
 
@@ -111,6 +113,7 @@ public class UserRegistration {
 	allEmailChecks("abc@gmail.com.com");
 	allEmailChecks("abc+100@gmail.com");
 
+
 	allEmailChecks("abc");
 	allEmailChecks("abc@.com.my");
 	allEmailChecks("abc123@gmail.a");
@@ -122,7 +125,7 @@ public class UserRegistration {
 	allEmailChecks("abc..2002@gmail.com");
 	allEmailChecks("abc.@gmail.com");
 	allEmailChecks("abc@abc@gmail.com");
-	allEmailChecks("abc@gmail.com.1a");
+	allEmailChecks("abc@gmail.com.1a");	
 	allEmailChecks("abc@gmail.com.aa.au");
 	}
 }
